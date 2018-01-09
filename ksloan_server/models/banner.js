@@ -14,8 +14,8 @@ exports.getBannerData = function(req, res) {
                 var arr = resultObj.data;
                 for (var i = 0; i < arr.length; i++) {
                     var bannerObject = arr[i];
-                    var imgUrl = bannerObject.xxhigh_url;
-                    bannerObject.xxhigh_url = 'http://' + req.get('host') + imgUrl;
+                    var imgUrl = bannerObject.xxHigh_url;
+                    bannerObject.xxHigh_url = 'http://' + req.get('host') + imgUrl;
                 }
 
                 var resultStr = JSON.stringify(resultObj);
