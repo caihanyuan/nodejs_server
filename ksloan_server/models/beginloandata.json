@@ -3,7 +3,8 @@
     "msg": "OK",
     "data": {
         "amount": 20000.0,
-        "available": 15000.0,
+        "available": 20000.0,
+        "minLoan":1000,
         "usageList": [
             "装修",
             "房贷",
