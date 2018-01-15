@@ -1,30 +1,17 @@
 var fs = require('fs');
 var path = require('path');
 
-exports.getBannerData = function(req, res) {
+exports.getBeginData = function(req, res) {
     try {
-        fs.readFile(path.join(__dirname, './bannerdata.json'), 'utf-8', function(err, data) {
+        fs.readFile(path.join(__dirname, './beginloandata.json'), 'utf-8', function(err, data) {
             if (err) {
                 res.statusCode = 500;
                 res.end();
-                console.log('error to read file: bannerdata.json');
+                console.log('error to read file: beginloandata.json');
                 throw err;
             } else {
                 try {
                     var resultObj = JSON.parse(data);
-                    var arr = resultObj.data;
-                    for (var i = 0; i < arr.length; i++) {
-                        var bannerObject = arr[i];
-
-                        for (var key in bannerObject) {
-
-                            if (key.indexOf('HighUrl') != -1) {
-                                var imgUrl = bannerObject[key];
-                                bannerObject[key] = 'http://' + req.get('host') + imgUrl;
-                            }
-                        }
-                    }
-
                     var resultStr = JSON.stringify(resultObj);
                     console.log('Result obj:', resultStr);
 
