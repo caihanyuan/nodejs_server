@@ -5,6 +5,6 @@ exports.setRequestUrl=function(app){
     var loanModel = require('./models/beginloan');
 
     app.get('/api/content/v1/banners', banner.getBannerData);
-    app.post('/loanstatus', loanstatus.getCanLoanStatus);
+    app.post('/loanstatus', loanstatus.getRandomStatus);
     app.post('/api/content/v1/loanbegin', loanModel.getBeginData);
 }
