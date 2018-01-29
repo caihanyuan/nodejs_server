@@ -67,7 +67,7 @@
              status.available = 20000.0;
              break;
          case STATUS_BEGIN:
-             status.step = 5;
+             status.step = 3;
              status.available = 20000.0;
              console.log('STATUS_BEGIN');
              break;
